@@ -1,0 +1,15 @@
+#MySQL Database 생성
+mysql -u root –p (root는 admin이 쓰는 계정)
+show databases;
+use mysql;
+create user python@localhost identified by 'python';
+(일반 개발자들이 쓸 수 있게 계정을 만들어줌)
+select user, host from user;
+grant all on *.* to python@localhost;
+flush privileges;
+exit;
+
+mysql -u python -p (그래서 이제 개발자계정으로 간다)
+create database python_db;
+show databases;
+use python_db;

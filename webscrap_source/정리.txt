@@ -1,0 +1,189 @@
+7월 14일 ~ 7월 27일
+Python Programming (80시간)
+7월 28일 ~ 8월3일
+데이터베이스 활용 (40시간)
+(RDB - MariaDB, 
+ NoSQL - MongoDB)
+8월4일 ~ 8월10일
+웹프로그래밍 (40시간)
+: html, css,
+: Django (python 기반 웹프레임워크)
+8월 11,12,14,18,19
+: 웹기반 프로젝트  (40시간)
+
+Python 정복
+화 : 1장 ~ 4장 - 파이썬,변수,타입,연산자
+수 : 5장 ~ 7장 - 조건문, 반복문,함수
+목 : 8장 ~ 9장 - 문자열관리, 리스트와튜플
+>>> 수 : 5장 ~ 10장 
+목, 금 ,토: 
+SQL, html, css selector (css 선택자)
+다음주에 사용하실 python open source 목록
+1. pandas : tablet data(표데이터) 처리
+2. requests : http client
+3. beautifulsoup : html, xml 데이터 parsing
+4. matplotlib : visualization(시각화)
+5. seaborn : visualization(시각화)
+6. pymysql :  mysql db connector
+7. sqlalchemy : ORM 기능 
+
+ORM(Object Relational Mapping) 
+-------------------------------------------
+월 : 14장 ~ 15장 - 파일, 클래스(*)
+화 : 16장 ~ 17장 - 모듈과패키지, 고급문법  
+  
+7월20일(월)
+1. Anaconda 설치
+: python 기본 toolkit + 외부 라이브러리 
+: 관리자권한으로 실행
+: path 우선 순위를 변경
+
+2. Editor 
+: Jupyter Notebook 사용
+CLI(Command Line Inteface) 방식 : python idle
+>>>
+: ipython 을 기반으로 해서 Browser 상에 사용하는 에디터
+: chrome 브라우저가 기본 브라우저로 설정되어 있어야 함
+
+1. requests : http client
+https://requests.readthedocs.io/en/master/
+: built in module - urllib
+
+2. beautifulsoup : html, xml 데이터 parsing
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+3. pandas : tablet data(표데이터) 처리
+ : 데이터 분석, DB 에 저장, 시각화 연동
+
+4. matplotlib : visualization(시각화)
+https://matplotlib.org/gallery/index.html
+
+5. seaborn : visualization(시각화)
+https://seaborn.pydata.org/
+
+6. pymysql :  mysql db driver
+https://github.com/PyMySQL/PyMySQL/
+
+7. sqlalchemy : ORM(object relational Mapping) 기능
+tabular data : DataFrame 객체
+ORM Rule
+ class  <=>  Table
+ object <=> Row(Record)
+ varible <=> column
+https://www.sqlalchemy.org/
+
+8. pymongo : mongodb driver
+https://github.com/mongodb/mongo-python-driver
+
+9. Jupyter Notebook (  jupyter lab )
+https://jupyter-notebook.readthedocs.io/en/stable/
+
+Web Scraping 과 데이터 분석
+ 1. naver 뉴스 제목 검색
+ 2. naver API : 파파고 번역서비스
+ 3. naver 웹툰 다운로드 & 업로드
+ - 1,2,3 : requests연습 
+4. 기상청 날씨데이터 검색(수)
+ - beautifulsoup 연습, selector 연습
+
+5. Pandas 연습(수 오후 / 목 오전)
+   : 행정구역 정보 csv 데이터
+   : sql group by  란?
+   : pandas, 
+   : matplotlib, seaborn   
+ 6. Melon 100 chart (목 ~ 금, 월)
+ 7. 국회의원 정보 검색
+ - requests, beautfulsoup, pandas, 
+ - matplotlib, seaborn, pymysql(MariaDB), sqlalchemy
+
+ 8. 팟빵 (화/수)
+ - mp4 다운로드
+-----------
+ 9. MongoDB (수,목,금)
+ cine21 - 영화, 배우 정보 검색
+
+ 10. 머신러닝
+
+숙제
+Ajax 란? 
+기존웹과 Ajax 방식의 웹 차이점
+
+http protocol 
+http method
+GET :  url 에 append 해서 보내는 방식, 조회
+POST : body stream에 데이터 담아서 보내는 방식, 등록,갱신
+
+cookie
+session
+- http 프로토콜은 connectionless
+
+CSS Selector
+<scipt>
+  var my_div =  document.getElmentById('myDiv');
+ 
+</script>
+
+<div id="myDiv">
+</div>
+<div class="myClass">
+</div>
+<ul>
+   <li>aaa</li>
+  <li>aaa</li>
+</ul>
+<a href="www.naver.com"></a>
+<img src="">
+
+1) Tag Selector
+: tag명으로 특정 tag을 선택
+soup.select('li')
+2) ID selector #
+soup.select('#myDiv')
+3) class selector .
+soup.select('div.myClass')
+4) attribute selector []
+soup.select("a[href='www.naver.com']|)
+*= :  부분 매칭
+^= : 시작
+$= : 종료
+
+<a href="www.naver.com">기사제목</a>
+a_tag.text
+a_tag['href']
+
+                                /main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=011&aid=0003771063
+https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=586&aid=0000015237
+
+#today_main_news > div.hdline_news > ul > li:nth-child(1) > div.hdline_article_tit > a
+
+
+
+client_id = "Zo1vTslyKxKYskf_qfUk"
+client_secret = "X5kGpbWEbv"
+
+#genreRecommand  li  a
+
+<a href=""><span>완결</span></a>
+a_tag['href']
+a_tag.text.strip()
+
+[
+  {title:'',link:''},{},{}
+]
+
+
+soup.select()
+[a Tag객체, a Tag객체    ]
+<a href="www.naver.com">네이버</a>
+
+<img src="a.jpg">
+
+HTML(Hyter Text Markup Language)
+DOM(Document Object Model)
+- dom tree
+- traversing , traverse (순회한다)
+- manipulation (조작) : tree 변경
+
+
+
+

@@ -1,0 +1,4 @@
+2020-07-17 16:40:55,111 - DEBUG - logging_file_test.py:29 - Start of the Program
+2020-07-17 16:40:55,112 - DEBUG - logging_file_test.py:30 - Hello Debug Mode
+2020-07-17 16:40:55,112 - INFO - logging_file_test.py:31 - Hello Info Mode
+2020-07-17 16:40:55,112 - DEBUG - logging_file_test.py:32 - End of the Program
