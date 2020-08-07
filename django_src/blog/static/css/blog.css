@@ -45,3 +45,7 @@ h2, h3, h4{
     margin-right: 20px;
     float: left;
 }
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 # Register your models here.
-from .models import Post
+from .models import Post, Comment
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'count_text']
@@ -11,3 +11,4 @@ class PostAdmin(admin.ModelAdmin):
     count_text.short_description = 'text 글자 수'
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)
