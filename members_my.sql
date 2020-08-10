@@ -1,57 +1,40 @@
-desc members;
-#drop table members;
-
-select 이름,나이,사무실전화 from members where 사무실전화 is null or 사무실전화 = '';
-select distinct 정당 from members;
-select 정당,count(*) as 정당수 from members group by 정당 order by 정당수 desc;
-
-select id,이름 from members;
-
-#ALTER TABLE members MODIFY id int NOT NULL AUTO_INCREMENT PRIMARY KEY;
-#ALTER TABLE members CHANGE 생년월일 생년월일 DATE NULL;
-
-select id,이름,나이,정당 from members order by 나이 desc;
-select 이름,나이,정당,취미특기 from members where 나이 between 60 and 80;
-select 이름,나이,정당,취미특기 from members where 나이 between 20 and 40;
-
-update members set 취미특기 = '없음' where 취미특기 = '';
-select * from members where 취미특기 = '';
-select * from members where 취미특기 = '없음';
-
-select substring(이름, 1, 1) as 성 from members;
-select substring(이름, 1, 1) as 성, count(*) as 갯수 from members group by 성 order by 갯수 desc;
-
-select distinct 소속위원회 from members;
-select 이름,정당,소속위원회 from members where 소속위원회 like '%보건복지%' or 소속위원회 like '%법제사법%' order by 소속위원회;
-
-select 이름,비서관,비서 from members;
-select (LENGTH(비서)),비서 from members;
-select (LENGTH(비서)),LENGTH(REPLACE(비서, ',', '')),(LENGTH(비서) - LENGTH(REPLACE(비서, ',', '')) + 1), 비서 from members;
-# select (LENGTH(비서)),LENGTH(REPLACE(비서, ',', '')),(LENGTH(비서) - LENGTH(REPLACE(비서, ',', '')) + 1) as cnt, 비서 from members
-# where cnt = 4;
-
-SELECT (LENGTH(비서) - LENGTH(REPLACE(비서, ',', '')) + 1) as value_count FROM members;
-
-select m.id,m.이름,m.비서,n.value_count
-  from members m,
-       (SELECT id,(LENGTH(비서) - LENGTH(REPLACE(비서, ',', '')) + 1) as value_count FROM members) n
-where m.id = n.id
-  and n.value_count = 4;
-
-select * from members where 생년월일 > '1985-01-01' order by 생년월일;
-
-select distinct 정당 from members;
-
-select id,정당 from members
-where 정당 in ('더불어민주당', '미래통합당')
-  and 당선횟수 = '초선'
-  and 선거구 = '경기'
-order by 정당;
-
-select 정당,count(*) from members
-        where 정당 in ('더불어민주당', '미래통합당')
-          and 당선횟수 = '초선'
-          and 선거구 = '경기'
-group by 정당;
-
-select * from members where 이메일 like '%naver.com%';
+R 460 0 R 461 0 R 462 0 R 464 0 R 466 0 R 467 0 R 468 0 R 469 0 R 470 0 R 471 0 R 475 0 R 476 0 R 479 0 R 480 0 R 483 0 R 484 0 R 487 0 R 488 0 R 489 0 R 490 0 R 491 0 R 494 0 R 496 0 R 497 0 R 498 0 R 500 0 R 502 0 R 503 0 R 504 0 R 506 0 R 508 0 R 509 0 R 510 0 R 511 0 R 512 0 R 514 0 R 516 0 R 517 0 R 518 0 R 519 0 R 520 0 R 521 0 R 522 0 R 526 0 R 527 0 R 530 0 R 531 0 R 534 0 R 535 0 R 538 0 R 539 0 R 540 0 R 541 0 R 542 0 R 543 0 R 544 0 R 545 0 R 548 0 R 550 0 R 551 0 R 552 0 R 554 0 R 556 0 R 557 0 R 558 0 R 560 0 R 562 0 R 563 0 R 564 0 R 566 0 R 568 0 R 569 0 R 570 0 R 571 0 R 572 0 R 573 0 R 574 0 R 575 0 R 576 0 R 577 0 R 578 0 R 579 0 R 580 0 R 581 0 R 585 0 R 586 0 R 589 0 R 590 0 R 593 0 R 594 0 R 595 0 R 596 0 R 599 0 R 600 0 R 601 0 R 602 0 R 603 0 R 606 0 R 608 0 R 609 0 R 610 0 R 612 0 R 614 0 R 615 0 R 616 0 R 618 0 R 620 0 R 621 0 R 622 0 R 623 0 R 625 0 R 627 0 R 628 0 R 629 0 R 630 0 R 631 0 R 632 0 R 636 0 R 637 0 R 640 0 R 641 0 R 644 0 R 645 0 R 648 0 R 649 0 R 650 0 R 651 0 R 652 0 R 653 0 R 656 0 R 658 0 R 659 0 R 660 0 R 662 0 R 664 0 R 665 0 R 666 0 R 668 0 R 670 0 R 671 0 R 672 0 R 674 0 R 676 0 R 677 0 R 678 0 R 679 0 R 680 0 R 681 0 R 685 0 R 686 0 R 689 0 R 690 0 R 693 0 R 694 0 R 697 0 R 698 0 R 699 0 R 700 0 R 701 0 R 702 0 R 703 0 R 704 0 R 705 0 R 707 0 R 709 0 R 711 0 R 713 0 R 715 0 R 717 0 R 719 0 R 721 0 R 723 0 R 725 0 R] 
+endobj
+153 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText( ) /K[ 1] /Pg 26 0 R>>
+endobj
+154 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(0) /K[ 2] /Pg 26 0 R>>
+endobj
+155 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(1) /K[ 3] /Pg 26 0 R>>
+endobj
+156 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText( ) /K[ 4] /Pg 26 0 R>>
+endobj
+157 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(\() /K[ 5] /Pg 26 0 R>>
+endobj
+158 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(���) /K[ 6] /Pg 26 0 R>>
+endobj
+159 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(1) /K[ 7] /Pg 26 0 R>>
+endobj
+160 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(���) /K[ 8] /Pg 26 0 R>>
+endobj
+161 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText(\)) /K[ 9] /Pg 26 0 R>>
+endobj
+162 0 obj
+<</P 150 0 R/S/Span/Type/StructElem/ActualText( ) /K[ 10] /Pg 26 0 R>>
+endobj
+163 0 obj
+<</P 103 0 R/S/P/Type/StructElem/K[ 164 0 R] /Pg 26 0 R>>
+endobj
+164 0 obj
+<</P 163 0 R/S/Span/Type/StructElem/ActualText( ) /K[ 11] /Pg 26 0 R>>
+endobj
+165 0 obj
+<</P 

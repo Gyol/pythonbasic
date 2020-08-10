@@ -28,7 +28,7 @@
     <div class="comment">
         <div class="date">
         {{ comment.created_date }}
-        {% if not commend.approved_comment %}
+        {% if not comment.approved_comment %}
             <a class="btn btn-link" href="{% url 'comment_remove' pk=comment.pk %}">
             <span class="glyphicon glyphicon-remove"></span></a>
             <a class="btn btn-link" href="{% url 'comment_approve' pk=comment.pk %}">

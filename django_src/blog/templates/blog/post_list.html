@@ -3,8 +3,8 @@
     {% for post in posts %}
         <div class="post">
             <div class="date">
-                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title|title }} -
-                {{ post.comments.count }}</a> ></h2>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title|title }}
+                {{ post.approved_comments.count }}</a> ></h2>
                 <p> {{ post.published_date }} </p>
             </div>
         </div>
