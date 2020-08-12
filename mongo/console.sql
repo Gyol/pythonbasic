@@ -29,10 +29,10 @@ db.people.find({})
 // sql할때는 뭘찾는지 먼저 쓰고 뒤에 조건을 덧붙였잖아
 db.people.find({},{user_id:1, age:1})
 
-// select user_id, status from people
-// 안 보고싶은 column이 있으면 0 입력 1은 보고싶은거
-// 아예 암것도 안주면 자동으로 select * 처리
-// 내가 만든 column은 안씀=안보임인데 _id는 얘가만든거라 안쓰면 자동보임
+-- // select user_id, status from people
+-- // 안 보고싶은 column이 있으면 0 입력 1은 보고싶은거
+-- // 아예 암것도 안주면 자동으로 select * 처리
+-- // 내가 만든 column은 안씀=안보임인데 _id는 얘가만든거라 안쓰면 자동보임
 db.people.find({}, {user_id:1, status:1, _id:0})
 
 // document를 여러 개 한번에 끼워넣는 insertMany
@@ -48,25 +48,25 @@ db.people.find()
 // 원하는 document 갯수 지정
 db.people.find().limit(2)
 
-// select * from people where status = 'Gorgeous'
+-- // select * from people where status = 'Gorgeous'
 db.people.find({status:"Gorgeous"})
 
-// select user_id, status from people where status = 'A'
+-- // select user_id, status from people where status = 'A'
 db.people.find({status:"A"}, {user_id:1, status:1, _id:0})
 
-// select * from people where status != 'A'
+-- // select * from people where status != 'A'
 db.people.find({status:{$ne:'A'}})
 
-// select user_id, status, age from people user_id != 'abc001'
+-- // select user_id, status, age from people user_id != 'abc001'
 db.people.find({user_id:{$ne:'abc001'}}, {_id:0, user_id:1, status:1, age:1})
 
-// select * from people where status = 'A' and age = 50
+-- // select * from people where status = 'A' and age = 50
 db.people.find({status:'A', age:50})
 
-// select * from people where status = 'A' or age = 50
+-- // select * from people where status = 'A' or age = 50
 db.people.find({$or: [{status:'A'}, {age:50}]})
 
-// select status, age from people where status = 'A' or age = 50
+-- // select status, age from people where status = 'A' or age = 50
 db.people.find({$or: [{status:'A'}, {age:50}]}, {_id:0, status:1, age:1})
 
 // select * from people where age > 25
